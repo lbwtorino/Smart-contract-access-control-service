@@ -21,5 +21,12 @@ The neccessary prerequisites are:
 
 `/user` contains Truffle testnet test file (need install node.js, Ganache, etc.). 
 
+To test super/method/argument token type, by running `./run.sh dacs` which will read `/user/user_dacs.js` file that contains test cases
+
+To test multiple tokens (call chain), bu running `./run.sh multi`
+
+To test verification tool performance (e.g., ECFChecker in our paper), bu running `./run.sh dao`
+
+
 ## Contact
 Bowen@ bowen_liu@mymail.sutd.edu.sg
