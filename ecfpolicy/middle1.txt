@@ -1,0 +1,5 @@
+var attackAddr;
+var attack = attackContract.new(
+       daoAddr,
+	   {
+	     from: me, 
