@@ -13,7 +13,7 @@ The neccessary prerequisites are:
 - [Ganache](https://www.trufflesuite.com/ganache)
 - Misc: python, nodeJS, make, etc,. (to update)
 
-## Info
+## Information and Execution
 
 `/contracts` contains smart contract solidity code,
 
@@ -21,12 +21,32 @@ The neccessary prerequisites are:
 
 `/user` contains Truffle testnet test file (need install node.js, Ganache, etc.). 
 
-To test super/method/argument token type, by running `./run.sh dacs` which will read `/user/user_dacs.js` file that contains test cases
+To complile the sample smart contract, 
+```sh
+$ truffle compile
+```
 
-To test multiple tokens (call chain), bu running `./run.sh multi`
+To deploy the compiled smart contract on Truffle testnet, 
+```sh
+$ truffle migrate
+```
 
-To test verification tool performance (e.g., ECFChecker in our paper), bu running `./run.sh dao`
+To test super/method/argument token type, 
+```sh
+$ ./run.sh dacs
+```
+It will read `/user/user_dacs.js` file that contains the logic of starting a Token service (implemented by javascript), token request from a user,
+and creating a transaction by user with token.
 
+To test multiple tokens (call chain), 
+```sh
+$ ./run.sh multi
+```
+
+To test verification tool performance (e.g., ECFChecker in our paper),
+```sh
+$ ./run.sh dao
+```
 
 ## Contact
 Bowen@ bowen_liu@mymail.sutd.edu.sg
